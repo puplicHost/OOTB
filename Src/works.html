@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>أعمالنا | OOTB Portfolio</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e98024",
+                        "main": "#FFF4EA",
+                        "dark": "#353535",
+                    },
+                    fontFamily: {
+                        "display": ["Outfit", "IBM Plex Sans Arabic", "sans-serif"],
+                        "sans": ["IBM Plex Sans Arabic", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        ::selection {
+            background-color: #e98024;
+            color: #FFF4EA;
+        }
+
+        .glass {
+            background: rgba(255, 244, 234, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(233, 128, 36, 0.1);
+        }
+
+        .work-card {
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .work-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .image-zoom {
+            transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .work-card:hover .image-zoom {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body class="bg-main font-sans text-dark antialiased">
+    <!-- Navigation -->
+    <header class="fixed top-0 z-50 w-full glass">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+            <div class="flex items-center gap-4 group cursor-pointer">
+                <div
+                    class="flex items-center justify-center p-1 bg-primary/10 rounded-full group-hover:bg-primary/20 transition-all overflow-hidden w-16 h-16">
+                    <img src="../Logo/2.png" alt="OOTB Logo" class="h-full w-full object-contain drop-shadow-sm">
+                </div>
+                <div class="flex flex-col text-right">
+                    <div class="font-display font-black text-2xl tracking-tight text-dark leading-none">OOTB</div>
+                    <div class="text-[10px] uppercase tracking-[0.3em] font-bold text-primary mt-1">Growth Systems</div>
+                </div>
+            </div>
+            <nav class="hidden lg:flex items-center gap-12 text-right">
+                <a class="text-sm font-bold text-dark/80 hover:text-primary transition-all relative group/link"
+                    href="../index.html">الرئيسية <span
+                        class="absolute -bottom-1 right-0 w-0 h-0.5 bg-primary transition-all group-hover/link:w-full"></span></a>
+                <a class="text-sm font-bold text-dark/80 hover:text-primary transition-all relative group/link"
+                    href="works.html">أعمالنا <span
+                        class="absolute -bottom-1 right-0 w-full h-0.5 bg-primary transition-all"></span></a>
+                <a class="text-sm font-bold text-dark/80 hover:text-primary transition-all relative group/link"
+                    href="services.html">خدماتنا <span
+                        class="absolute -bottom-1 right-0 w-0 h-0.5 bg-primary transition-all group-hover/link:w-full"></span></a>
+                <a class="text-sm font-bold text-dark/80 hover:text-primary transition-all relative group/link"
+                    href="about.html">من نحن <span
+                        class="absolute -bottom-1 right-0 w-0 h-0.5 bg-primary transition-all group-hover/link:w-full"></span></a>
+                <a class="text-sm font-bold text-dark/80 hover:text-primary transition-all relative group/link"
+                    href="contact.html">اتصل بنا <span
+                        class="absolute -bottom-1 right-0 w-0 h-0.5 bg-primary transition-all group-hover/link:w-full"></span></a>
+            </nav>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden text-dark hover:text-primary transition-colors p-2 z-50">
+                    <span class="material-symbols-rounded text-3xl">menu</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed inset-0 z-40 bg-main/98 backdrop-blur-xl flex-col items-center justify-center gap-8 hidden lg:hidden">
+            <button id="close-menu-btn" class="absolute top-8 left-6 text-dark hover:text-primary transition-colors p-2 z-50">
+                <span class="material-symbols-rounded text-4xl">close</span>
+            </button>
+            <nav class="flex flex-col items-center gap-8 text-xl font-bold">
+                <a href="../index.html" class="text-dark hover:text-primary transition-all">الرئيسية</a>
+                <a href="works.html" class="text-dark hover:text-primary transition-all">أعمالنا</a>
+                <a href="services.html" class="text-dark hover:text-primary transition-all">خدماتنا</a>
+                <a href="about.html" class="text-dark hover:text-primary transition-all">من نحن</a>
+                <a href="contact.html" class="text-dark hover:text-primary transition-all">اتصل بنا</a>
+            </nav>
+        </div>
+
+    <main class="max-w-7xl mx-auto px-6 py-40">
+        <!-- Hero Section -->
+        <section class="mb-32 text-right space-y-8">
+            <div class="inline-flex items-center gap-3 px-4 py-2 bg-primary/5 border border-primary/20 rounded-full">
+                <span class="flex h-2 w-2 rounded-full bg-primary"></span>
+                <span class="text-[10px] font-black uppercase tracking-[0.2em] text-primary">Our Gallery of
+                    Impact</span>
+            </div>
+            <h1 class="text-6xl md:text-9xl font-black text-dark tracking-tight leading-tight">معرض <br><span
+                    class="text-primary italic">الإبداع والنتائج</span></h1>
+            <p class="text-dark/60 text-2xl font-bold max-w-2xl leading-relaxed">
+                هنا حيث تتحول الرؤى إلى واقع ملموس. استعرض رحلات النجاح التي خضناها مع شركائنا.
+            </p>
+        </section>
+
+        <!-- Works Categories (Filter Simulation) -->
+        <div class="flex flex-wrap gap-4 mb-20 justify-start" id="portfolio-filters">
+            <button data-filter="all" class="filter-btn px-8 py-3 bg-primary text-dark rounded-full font-black text-sm transition-all shadow-lg shadow-primary/20">الكل</button>
+            <button data-filter="design"
+                class="filter-btn px-8 py-3 bg-white border border-dark/5 text-dark/60 rounded-full font-black text-sm hover:border-primary/40 hover:text-dark transition-all">التصميم</button>
+            <button data-filter="content"
+                class="filter-btn px-8 py-3 bg-white border border-dark/5 text-dark/60 rounded-full font-black text-sm hover:border-primary/40 hover:text-dark transition-all">صناعة محتوى</button>
+            <button data-filter="video"
+                class="filter-btn px-8 py-3 bg-white border border-dark/5 text-dark/60 rounded-full font-black text-sm hover:border-primary/40 hover:text-dark transition-all">صناعة فيديو</button>
+        </div>
+
+        <!-- Design Section Title -->
+        <div class="mb-16 text-right portfolio-section" data-category="design">
+            <h2 class="text-4xl font-black text-dark flex items-center gap-4 justify-end">
+                <span class="w-12 h-1 bg-primary rounded-full"></span>
+                أعمال التصميم الإبداعي
+            </h2>
+        </div>
+
+        <!-- Portfolio Grid - Design Works -->
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-40 portfolio-section" data-category="design">
+            <!-- Project 1 -->
+            <div
+                class="work-card group relative overflow-hidden rounded-[2.5rem] bg-white border border-dark/5 shadow-xl">
+                <div class="aspect-[4/3] overflow-hidden">
+                    <img src="../desing/10edbd233668509.Y3JvcCwzODM1LDMwMDAsODM1LDA.png" alt="Design Work"
+                        class="w-full h-full object-cover image-zoom">
+                </div>
+                <div class="p-8 text-right">
+                    <span
+                        class="text-primary font-black text-[10px] uppercase tracking-widest mb-2 block">Branding</span>
+                    <h3 class="text-xl font-black text-dark group-hover:text-primary transition-colors">تصميم هوية بصرية
+                    </h3>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div
+                class="work-card group relative overflow-hidden rounded-[2.5rem] bg-white border border-dark/5 shadow-xl">
+                <div class="aspect-[4/3] overflow-hidden">
+                    <img src="../desing/3c92bb240037875.Y3JvcCwxOTIwLDE1MDEsMCwyODM3.png" alt="Design Work"
+                        class="w-full h-full object-cover image-zoom">
+                </div>
+                <div class="p-8 text-right">
+                    <span class="text-primary font-black text-[10px] uppercase tracking-widest mb-2 block">Social
+                        Media</span>
+                    <h3 class="text-xl font-black text-dark group-hover:text-primary transition-colors">إبداع السوشيال
+                        ميديا</h3>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div
+                class="work-card group relative overflow-hidden rounded-[2.5rem] bg-white border border-dark/5 shadow-xl">
+                <div class="aspect-[4/3] overflow-hidden">
+                    <img src="../desing/4bb7e1230369001.Y3JvcCw5OTksNzgyLDAsMTA4.jpg" alt="Design Work"
+                        class="w-full h-full object-cover image-zoom">
+                </div>
+                <div class="p-8 text-right">
+                    <span class="text-primary font-black text-[10px] uppercase tracking-widest mb-2 block">Visual
+                        Identity</span>
+                    <h3 class="text-xl font-black text-dark group-hover:text-primary transition-colors">تطوير شعار
+                        احترافي</h3>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div
+                class="work-card group relative overflow-hidden rounded-[2.5rem] bg-white border border-dark/5 shadow-xl">
+                <div class="aspect-[4/3] overflow-hidden">
+                    <img src="../desing/611f34227043149.Y3JvcCwyODc2LDIyNTAsNTYyLDA.png" alt="Design Work"
+                        class="w-full h-full object-cover image-zoom">
+                </div>
+                <div class="p-8 text-right">
+                    <span
+                        class="text-primary font-black text-[10px] uppercase tracking-widest mb-2 block">Corporate</span>
+                    <h3 class="text-xl font-black text-dark group-hover:text-primary transition-colors">بروفايل شركات
+                    </h3>
+                </div>
+            </div>
+
+            <!-- Project 5 -->
+            <div
+                class="work-card group relative overflow-hidden rounded-[2.5rem] bg-white border border-dark/5 shadow-xl">
+                <div class="aspect-[4/3] overflow-hidden">
+                    <img src="../desing/64c520242400153.Y3JvcCwyNjYzLDIwODMsMzU1LDA.png" alt="Design Work"
+                        class="w-full h-full object-cover image-zoom">
+                </div>
+                <div class="p-8 text-right">
+                    <span class="text-primary font-black text-[10px] uppercase tracking-widest mb-2 block">Ads
+                        Design</span>
+                    <h3 class="text-xl font-black text-dark group-hover:text-primary transition-colors">إعلانات تسويقية
+                    </h3>
+                </div>
+            </div>
+
+            <!-- Project 6 -->
+            <div
+                class="work-card group relative overflow-hidden rounded-[2.5rem] bg-white border border-dark/5 shadow-xl">
+                <div class="aspect-[4/3] overflow-hidden">
+                    <img src="../desing/7388e3243368895.Y3JvcCw4NjAsNjcyLDQwLDU3.jpeg" alt="Design Work"
+                        class="w-full h-full object-cover image-zoom">
+                </div>
+                <div class="p-8 text-right">
+                    <span class="text-primary font-black text-[10px] uppercase tracking-widest mb-2 block">Art
+                        Direction</span>
+                    <h3 class="text-xl font-black text-dark group-hover:text-primary transition-colors">توجيه فني إبداعي
+                    </h3>
+                </div>
+            </div>
+
+            <!-- Project 7 -->
+            <div
+                class="work-card group relative overflow-hidden rounded-[2.5rem] bg-white border border-dark/5 shadow-xl">
+                <div class="aspect-[4/3] overflow-hidden">
+                    <img src="../desing/7d7adf241185301.Y3JvcCwxOTIwLDE1MDEsMCw4NDU.png" alt="Design Work"
+                        class="w-full h-full object-cover image-zoom">
+                </div>
+                <div class="p-8 text-right">
+                    <span
+                        class="text-primary font-black text-[10px] uppercase tracking-widest mb-2 block">Branding</span>
+                    <h3 class="text-xl font-black text-dark group-hover:text-primary transition-colors">تصميم علامة
+                        تجارية</h3>
+                </div>
+            </div>
+
+            <!-- Project 8 -->
+            <div
+                class="work-card group relative overflow-hidden rounded-[2.5rem] bg-white border border-dark/5 shadow-xl">
+                <div class="aspect-[4/3] overflow-hidden">
+                    <img src="../desing/8186f9233071241.Y3JvcCwxMDgwLDg0NCwwLDExNw.png" alt="Design Work"
+                        class="w-full h-full object-cover image-zoom">
+                </div>
+                <div class="p-8 text-right">
+                    <span class="text-primary font-black text-[10px] uppercase tracking-widest mb-2 block">Modern
+                        Design</span>
+                    <h3 class="text-xl font-black text-dark group-hover:text-primary transition-colors">تصميمات عصرية
+                    </h3>
+                </div>
+            </div>
+
+            <!-- Project 9 -->
+            <div
+                class="work-card group relative overflow-hidden rounded-[2.5rem] bg-white border border-dark/5 shadow-xl">
+                <div class="aspect-[4/3] overflow-hidden">
+                    <img src="../desing/9dcd49228949851.Y3JvcCwxMjc4LDEwMDAsMTEwLDA.jpg" alt="Design Work"
+                        class="w-full h-full object-cover image-zoom">
+                </div>
+                <div class="p-8 text-right">
+                    <span
+                        class="text-primary font-black text-[10px] uppercase tracking-widest mb-2 block">Marketing</span>
+                    <h3 class="text-xl font-black text-dark group-hover:text-primary transition-colors">محتوى مرئي
+                        تسويقي</h3>
+                </div>
+            </div>
+
+            <!-- Project 10 -->
+            <div
+                class="work-card group relative overflow-hidden rounded-[2.5rem] bg-white border border-dark/5 shadow-xl">
+                <div class="aspect-[4/3] overflow-hidden">
+                    <img src="../desing/ad71d1230766387.Y3JvcCwzMTk2LDI0OTksMTUwLDA.jpg" alt="Design Work"
+                        class="w-full h-full object-cover image-zoom">
+                </div>
+                <div class="p-8 text-right">
+                    <span
+                        class="text-primary font-black text-[10px] uppercase tracking-widest mb-2 block">Strategy</span>
+                    <h3 class="text-xl font-black text-dark group-hover:text-primary transition-colors">إستراتيجية بصرية
+                    </h3>
+                </div>
+            </div>
+
+            <!-- Project 11 -->
+            <div
+                class="work-card group relative overflow-hidden rounded-[2.5rem] bg-white border border-dark/5 shadow-xl">
+                <div class="aspect-[4/3] overflow-hidden">
+                    <img src="../desing/b80cf8235647311.Y3JvcCwxMDgwLDg0NCwwLDExNw.jpg" alt="Design Work"
+                        class="w-full h-full object-cover image-zoom">
+                </div>
+                <div class="p-8 text-right">
+                    <span class="text-primary font-black text-[10px] uppercase tracking-widest mb-2 block">Print
+                        Design</span>
+                    <h3 class="text-xl font-black text-dark group-hover:text-primary transition-colors">تصميمات مطبوعة
+                    </h3>
+                </div>
+            </div>
+
+            <!-- Project 12 -->
+            <div
+                class="work-card group relative overflow-hidden rounded-[2.5rem] bg-white border border-dark/5 shadow-xl">
+                <div class="aspect-[4/3] overflow-hidden">
+                    <img src="../desing/f7bf9c229246585.Y3JvcCwxMDgwLDg0NCwwLDExNw.png" alt="Design Work"
+                        class="w-full h-full object-cover image-zoom">
+                </div>
+                <div class="p-8 text-right">
+                    <span class="text-primary font-black text-[10px] uppercase tracking-widest mb-2 block">Visual
+                        Arts</span>
+                    <h3 class="text-xl font-black text-dark group-hover:text-primary transition-colors">فنون بصرية
+                        متكاملة</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Behance Button -->
+        <div class="flex justify-center mb-40 portfolio-section" data-category="design">
+            <a href="https://www.behance.net/nouragamal6" target="_blank"
+                class="group relative px-12 py-6 bg-[#0057ff] text-white rounded-[2rem] font-black text-2xl transition-all hover:scale-105 shadow-2xl shadow-blue-500/20 flex items-center gap-4">
+                <span>شاهد المزيد على Behance</span>
+                <span
+                    class="material-symbols-rounded text-3xl group-hover:rotate-45 transition-transform">arrow_outward</span>
+            </a>
+        </div>
+
+        <!-- Content Creation Section Title -->
+        <div class="mb-16 text-right portfolio-section" data-category="content">
+            <h2 class="text-4xl font-black text-dark flex items-center gap-4 justify-end">
+                <span class="w-12 h-1 bg-primary rounded-full"></span>
+                كتابة وصناعة المحتوى - قاموس العالم
+            </h2>
+        </div>
+
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-40 portfolio-section" data-category="content">
+            <!-- Project 1 -->
+            <div class="work-card group relative overflow-hidden rounded-[2.5rem] bg-white border border-dark/5 shadow-xl flex flex-col">
+                <div class="aspect-[4/3] overflow-hidden bg-dark/5 flex items-center justify-center">
+                    <img src="../content/Qamos/1.jpg" alt="Content Work" class="w-full h-full object-contain image-zoom p-4">
+                </div>
+                <div class="p-8 text-right flex-1 flex flex-col justify-between">
+                    <p class="text-dark/80 font-medium leading-relaxed mb-4 whitespace-pre-line text-sm">في يوم التأسيس نستحضر بدايات وطنٍ عظيم،
+أرسى دعائم المجد ورسّخ جذور الاستقرار منذ ثلاثة 
+قرون.🇸🇦
+واليوم، تستمر المسيرة…
+وتتحدث قصة المملكة بلغة الحاضر إلى العالم.
+في قاموس العالم للترجمة المعتمدة نعتز بدورنا في نقل رسالة وطننا،
+وترجمة تاريخه وإنجازاته بلغة تليق بمكانته.
+يوم تأسيس مجيد
+قاموس العالم – نخاطب العالم بلغتك</p>
+                    <span class="text-primary font-black text-[10px] uppercase tracking-widest mt-auto">Qamos Al-Alam</span>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="work-card group relative overflow-hidden rounded-[2.5rem] bg-white border border-dark/5 shadow-xl flex flex-col">
+                <div class="aspect-[4/3] overflow-hidden bg-dark/5 flex items-center justify-center">
+                    <img src="../content/Qamos/2.jpg" alt="Content Work" class="w-full h-full object-contain image-zoom p-4">
+                </div>
+                <div class="p-8 text-right flex-1 flex flex-col justify-between">
+                    <p class="text-dark/80 font-medium leading-relaxed mb-4 whitespace-pre-line text-sm">رمضان مبارك 🌙🕋
+مع إشراقة هلال الشهر الكريم،
+نسأل الله أن يملأ أيامكم نورا،
+وقلوبكم طمأنينة،
+وأعمالكم قبولًا.
+شهر الرحمة والمغفرة فرصة جديدة للبدايات الجميلة،
+نسأل الله أن يجعله شهر خير وبركة عليكم وعلى أحبابكم.
+كل عام وأنتم بخير</p>
+                    <span class="text-primary font-black text-[10px] uppercase tracking-widest mt-auto">Qamos Al-Alam</span>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="work-card group relative overflow-hidden rounded-[2.5rem] bg-white border border-dark/5 shadow-xl flex flex-col">
+                <div class="aspect-[4/3] overflow-hidden bg-dark/5 flex items-center justify-center">
+                    <img src="../content/Qamos/3.jpg" alt="Content Work" class="w-full h-full object-contain image-zoom p-4">
+                </div>
+                <div class="p-8 text-right flex-1 flex flex-col justify-between">
+                    <p class="text-dark/80 font-medium leading-relaxed mb-4 whitespace-pre-line text-sm">في القطاع العقاري، أي خطأ لغوي قد يعني تأخير صفقة أو فقدان ثقة مستثمر.
+لهذا توفّر قاموس العالم خدمات ترجمة معتمدة ومتخصصة للشركات العقارية، تشمل:
+▪️ عقود البيع والشراء
+▪️ مذكرات التفاهم والاتفاقيات
+▪️ التقارير العقارية ودراسات الجدوى
+▪️ المراسلات الرسمية مع المستثمرين والجهات الخارجية
+نلتزم بالدقة القانونية، توحيد المصطلحات، والاعتماد الرسمي لدى الجهات المختصة،
+لنضمن أن تصل مستنداتك بلغة واضحة تعكس احتراف شركتك وتحمي مصالحك.
+تواصل معنا لخدمة ترجمة موثوقة تناسب متطلبات القطاع العقاري.</p>
+                    <span class="text-primary font-black text-[10px] uppercase tracking-widest mt-auto">Qamos Al-Alam</span>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="work-card group relative overflow-hidden rounded-[2.5rem] bg-white border border-dark/5 shadow-xl flex flex-col">
+                <div class="aspect-[4/3] overflow-hidden bg-dark/5 flex items-center justify-center">
+                    <img src="../content/Qamos/4.jpg" alt="Content Work" class="w-full h-full object-contain image-zoom p-4">
+                </div>
+                <div class="p-8 text-right flex-1 flex flex-col justify-between">
+                    <p class="text-dark/80 font-medium leading-relaxed mb-4 whitespace-pre-line text-sm">أطلقنا قناة قاموس العالم على تليجرام 📢
+مساحة مخصّصة لمتابعة كل جديد في عالم الترجمة
+المعتمدة والمتخصصة:
+✔️ تنبيهات وعروض حصرية
+✔️ نصائح مهمّة للمعاملات والمستندات
+✔️ تحديثات الخدمات أولًا بأول
+✔️ محتوى مهني يهم الأفراد والشركات
+انضم الآن وخلّك على اطلاع دائم بكل ما يخص الترجمة باحتراف 👌</p>
+                    <span class="text-primary font-black text-[10px] uppercase tracking-widest mt-auto">Qamos Al-Alam</span>
+                </div>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="work-card group relative overflow-hidden rounded-[2.5rem] bg-white border border-dark/5 shadow-xl flex flex-col">
+                <div class="aspect-[4/3] overflow-hidden bg-dark/5 flex items-center justify-center">
+                    <img src="../content/Qamos/5.jpg" alt="Content Work" class="w-full h-full object-contain image-zoom p-4">
+                </div>
+                <div class="p-8 text-right flex-1 flex flex-col justify-between">
+                    <p class="text-dark/80 font-medium leading-relaxed mb-4 whitespace-pre-line text-sm">كشف العائلة من أهم المستندات الرسمية التي تُطلب في المعاملات الحكومية، والسفارات، والجهات الدولية، وأي خطأ في ترجمته قد يعرّض معاملتك للتأخير أو الرفض.
+في قاموس العالم نقدّم لك ترجمة كشف العائلة بدقة عالية واعتماد رسمي، وفق الصيغ المعتمدة لدى جميع الجهات المختصة.
+✔️ ترجمة معتمدة وموثقة
+✔️ مطابقة تامة للبيانات والأسماء
+✔️ صياغة رسمية معترف بها
+✔️ سرعة في الإنجاز وسرية تامة
+سلّم مستندك لجهة تعرف قيمة التفاصيل.</p>
+                    <span class="text-primary font-black text-[10px] uppercase tracking-widest mt-auto">Qamos Al-Alam</span>
+                </div>
+            </div>
+
+            <!-- Project 6 -->
+            <div class="work-card group relative overflow-hidden rounded-[2.5rem] bg-white border border-dark/5 shadow-xl flex flex-col">
+                <div class="aspect-[4/3] overflow-hidden bg-dark/5 flex items-center justify-center">
+                    <img src="../content/Qamos/6.jpg" alt="Content Work" class="w-full h-full object-contain image-zoom p-4">
+                </div>
+                <div class="p-8 text-right flex-1 flex flex-col justify-between">
+                    <p class="text-dark/80 font-medium leading-relaxed mb-4 whitespace-pre-line text-sm">في قاموس العالم نوفّر خدمة ترجمة المراسلات بجميع أنواعها باحترافية عالية
+✔️ دقة المعنى
+✔️ نبرة الخطاب المناسبة (رسمية / تجارية / مهنية)
+✔️ مراعاة ثقافة الجهة المرسَل إليها
+✔️ خلو النص من أي لبس خلو النص من أي لبس أو خطأ
+سواء كانت مراسلات شركات، تواصل مع جهات حكومية، مراسلات قانونية أو رسائل رسمية دولية…
+نترجم مراسلاتك بلغة تعكس احترافيتك وتدعم صورتك المؤسسية بثقة.
+📲 تواصل معنا ودع مراسلاتك تعبّر عنك بالشكل الصحيح</p>
+                    <span class="text-primary font-black text-[10px] uppercase tracking-widest mt-auto">Qamos Al-Alam</span>
+                </div>
+            </div>
+
+            <!-- Project 7 -->
+            <div class="work-card group relative overflow-hidden rounded-[2.5rem] bg-white border border-dark/5 shadow-xl flex flex-col">
+                <div class="aspect-[4/3] overflow-hidden bg-dark/5 flex items-center justify-center">
+                    <img src="../content/Qamos/7.jpg" alt="Content Work" class="w-full h-full object-contain image-zoom p-4">
+                </div>
+                <div class="p-8 text-right flex-1 flex flex-col justify-between">
+                    <p class="text-dark/80 font-medium leading-relaxed mb-4 whitespace-pre-line text-sm">لأن راحتك جزء من خدمتنا
+يوفّر قاموس العالم خدمة توصيل المستندات المترجمة والمعتمدة إلى مقر عملك داخل المملكة عند الطلب.
+من لحظة استلام الملف وحتى وصوله إليك:
+✔️ ترجمة دقيقة ومعتمدة
+✔️ تغليف وتسليم آمن
+✔️ التزام كامل بالمواعيد
+اطلب الترجمة، وحدد التوصيل…
+ونتكفّل بالباقي باحترافية تامة.</p>
+                    <span class="text-primary font-black text-[10px] uppercase tracking-widest mt-auto">Qamos Al-Alam</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Links Button for Qamos Al-Alam -->
+        <div class="flex justify-center gap-6 mb-40 portfolio-section" data-category="content">
+            <a href="https://www.facebook.com/wd4translation/" target="_blank"
+                class="group relative px-8 py-4 bg-[#1877F2] text-white rounded-2xl font-black text-lg transition-all hover:-translate-y-1 shadow-lg shadow-blue-500/20 flex items-center gap-3">
+                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+                <span>فيسبوك</span>
+            </a>
+            <a href="https://www.instagram.com/wd4translation" target="_blank"
+                class="group relative px-8 py-4 bg-gradient-to-tr from-[#f09433] via-[#e6683c] to-[#bc1888] text-white rounded-2xl font-black text-lg transition-all hover:-translate-y-1 shadow-lg shadow-pink-500/20 flex items-center gap-3">
+                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                </svg>
+                <span>إنستجرام</span>
+            </a>
+        </div>
+
+        <!-- Video Editing Section Title -->
+        <div class="mb-16 text-right portfolio-section" data-category="video">
+            <h2 class="text-4xl font-black text-dark flex items-center gap-4 justify-end">
+                <span class="w-12 h-1 bg-primary rounded-full"></span>
+                صناعة ومونتاج الفيديو
+            </h2>
+        </div>
+
+        <!-- Portfolio Grid - Video Works -->
+        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-40 portfolio-section" data-category="video">
+            <!-- Project 1: Restaurant -->
+            <div
+                class="work-card group relative overflow-hidden rounded-[3.5rem] bg-dark border border-white/5 shadow-2xl">
+                <div class="aspect-[9/16] relative overflow-hidden bg-black">
+                    <video class="w-full h-full object-cover" controls>
+                        <source src="../videos/01.Restaurant ｜ video edit.webm" type="video/webm">
+                    </video>
+                </div>
+                <div
+                    class="p-8 text-right bg-dark/50 backdrop-blur-md absolute bottom-0 inset-x-0 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                    <span class="text-primary font-black uppercase tracking-widest text-[10px] mb-2 block">Restaurant
+                        Case Study</span>
+                    <h3 class="text-2xl font-black text-main">مونتاج إبداعي للمطاعم</h3>
+                </div>
+            </div>
+
+            <!-- Project 2: Discussion -->
+            <div
+                class="work-card group relative overflow-hidden rounded-[3.5rem] bg-dark border border-white/5 shadow-2xl">
+                <div class="aspect-[9/16] relative overflow-hidden bg-black">
+                    <video class="w-full h-full object-cover" controls>
+                        <source src="../videos/05.What do you think？.webm" type="video/webm">
+                    </video>
+                </div>
+                <div
+                    class="p-8 text-right bg-dark/50 backdrop-blur-md absolute bottom-0 inset-x-0 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                    <span class="text-primary font-black uppercase tracking-widest text-[10px] mb-2 block">Social
+                        Engagement</span>
+                    <h3 class="text-2xl font-black text-main">تفاعل ومونتاج بصري</h3>
+                </div>
+            </div>
+
+            <!-- Project 3: Medical/Expert -->
+            <div
+                class="work-card group relative overflow-hidden rounded-[3.5rem] bg-dark border border-white/5 shadow-2xl">
+                <div class="aspect-[9/16] relative overflow-hidden bg-black">
+                    <video class="w-full h-full object-cover" controls>
+                        <source src="../videos/06.Video Editing ｜ For D⧹Motaz.webm" type="video/webm">
+                    </video>
+                </div>
+                <div
+                    class="p-8 text-right bg-dark/50 backdrop-blur-md absolute bottom-0 inset-x-0 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                    <span class="text-primary font-black uppercase tracking-widest text-[10px] mb-2 block">Expert
+                        Content</span>
+                    <h3 class="text-2xl font-black text-main">مونتاج محتوى المتخصصين</h3>
+                </div>
+            </div>
+
+            <!-- Project 4: Decorations -->
+            <div
+                class="work-card group relative overflow-hidden rounded-[3.5rem] bg-dark border border-white/5 shadow-2xl">
+                <div class="aspect-[9/16] relative overflow-hidden bg-black">
+                    <video class="w-full h-full object-cover" controls>
+                        <source src="../videos/07.Video Edit ｜ Decorations.webm" type="video/webm">
+                    </video>
+                </div>
+                <div
+                    class="p-8 text-right bg-dark/50 backdrop-blur-md absolute bottom-0 inset-x-0 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                    <span class="text-primary font-black uppercase tracking-widest text-[10px] mb-2 block">Interior
+                        Design</span>
+                    <h3 class="text-2xl font-black text-main">مونتاج أعمال الديكور</h3>
+                </div>
+            </div>
+
+            <!-- Project 5: AI Integration -->
+            <div
+                class="work-card group relative overflow-hidden rounded-[3.5rem] bg-dark border border-white/5 shadow-2xl">
+                <div class="aspect-[9/16] relative overflow-hidden bg-black">
+                    <video class="w-full h-full object-cover" controls>
+                        <source src="../videos/08.AI ｜ Video editing.webm" type="video/webm">
+                    </video>
+                </div>
+                <div
+                    class="p-8 text-right bg-dark/50 backdrop-blur-md absolute bottom-0 inset-x-0 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                    <span class="text-primary font-black uppercase tracking-widest text-[10px] mb-2 block">AI
+                        Innovation</span>
+                    <h3 class="text-2xl font-black text-main">دمج الذكاء الاصطناعي في المونتاج</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Works Button -->
+        <div class="flex justify-center mb-40 portfolio-section" data-category="video">
+            <a href="#" 
+                class="group relative px-12 py-6 bg-primary text-dark rounded-[2rem] font-black text-2xl transition-all hover:scale-105 shadow-2xl shadow-primary/20 flex items-center gap-4">
+                <span>مشاهدة جميع الأعمال</span>
+                <span
+                    class="material-symbols-rounded text-3xl group-hover:translate-x-[-10px] transition-transform">arrow_back</span>
+            </a>
+        </div>
+
+        <!-- CTA Section -->
+        <section class="py-24 text-center bg-dark rounded-[4rem] text-main relative overflow-hidden shadow-2xl">
+            <div class="absolute inset-0 bg-primary/5 opacity-30"></div>
+            <div class="max-w-4xl mx-auto space-y-12 relative z-10 px-6">
+                <h2 class="text-5xl md:text-7xl font-black tracking-tight leading-loose">هل تريد أن نكتب <br><span
+                        class="text-primary italic">قصة نجاحك القادمة؟</span></h2>
+                <div class="pt-8">
+                    <a href="contact.html"
+                        class="inline-flex items-center gap-6 bg-primary text-dark px-12 py-6 rounded-[2rem] font-black text-2xl transition-all transform hover:scale-105 shadow-2xl shadow-primary/20 group">
+                        لنبدأ الآن
+                        <span
+                            class="material-symbols-rounded text-3xl transition-transform group-hover:translate-x-[-10px]">arrow_back</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark border-t border-primary/10 py-24 px-6 md:px-20 text-right relative overflow-hidden">
+        <div
+            class="absolute top-0 right-0 w-96 h-96 bg-primary opacity-[0.02] rounded-full translate-x-1/2 -translate-y-1/2">
+        </div>
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-20 relative z-10">
+            <div class="space-y-8 max-w-sm">
+                <div class="flex items-center gap-4 group cursor-pointer">
+                    <div
+                        class="flex items-center justify-center p-1 bg-white/5 rounded-full group-hover:bg-primary transition-all overflow-hidden w-16 h-16">
+                        <img src="../Logo/2.png" alt="OOTB Logo" class="h-full w-full object-contain">
+                    </div>
+                    <div class="flex flex-col text-right">
+                        <div class="font-display font-black text-3xl text-white leading-none">OOTB</div>
+                        <div class="text-[10px] uppercase tracking-[0.3em] font-bold text-primary mt-1">Growth Systems
+                        </div>
+                    </div>
+                </div>
+                <p class="text-white/40 font-bold leading-relaxed text-lg">وكالة النمو الإبداعي الرائدة في مصر. نحن لا
+                    نصمم محتوى فقط، بل نبني أنظمة نمو قوية تتجاوز التوقعات وتضع علامتك التجارية في الصدارة.</p>
+                <div class="flex gap-4">
+                    <a href="https://wa.me/201000046434" target="_blank"
+                        class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center text-white/40 hover:bg-[#25D366] hover:text-white transition-all duration-300">
+                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                            <path d="M12.031 0C5.385 0 0 5.387 0 12.035c0 2.126.551 4.195 1.597 6.014L.015 24l6.096-1.598A11.966 11.966 0 0012.031 24c6.645 0 12.031-5.385 12.031-12.033C24.062 5.387 18.676 0 12.031 0zm7.119 17.202c-.302.85-1.503 1.636-2.074 1.701-.523.058-1.189.261-3.75-1.488-3.085-2.108-5.076-5.263-5.228-5.467-.151-.202-1.25-1.666-1.25-3.178 0-1.512.784-2.257 1.059-2.559.274-.302.597-.378.795-.378.199 0 .397.001.57.009.183.008.431-.073.673.51.248.598.847 2.062.923 2.214.075.151.124.327.024.529-.099.202-.151.328-.301.503-.151.176-.316.37-.453.511-.151.144-.312.302-.143.593.17.291.756 1.246 1.618 2.016 1.111.996 2.051 1.306 2.342 1.45.291.144.462.12.636-.076.175-.195.748-.871.947-1.171.199-.302.398-.252.664-.151.266.1.1685.794 1.833.869.149.076.252.128.288.203.036.075.036.435-.266 1.285L19.15 17.202z"/>
+                        </svg>
+                    </a>
+                    <a href="mailto:im.sara1990@gmail.com"
+                        class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center text-white/40 hover:bg-primary hover:text-white transition-all duration-300">
+                        <span class="material-symbols-rounded">mail</span>
+                    </a>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-20 flex-1">
+                <div class="space-y-8">
+                    <h5 class="text-primary font-black uppercase tracking-[0.3em] text-xs">Navigation</h5>
+                    <ul class="space-y-4 text-white/60 font-bold text-lg">
+                        <li><a href="../index.html"
+                                class="hover:text-primary transition-colors flex items-center gap-3 justify-end group"><span>الرئيسية</span>
+                                <span
+                                    class="w-1.5 h-1.5 rounded-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></span></a>
+                        </li>
+                        <li><a href="works.html"
+                                class="hover:text-primary transition-colors flex items-center gap-3 justify-end group text-primary"><span>أعمالنا</span>
+                                <span
+                                    class="w-1.5 h-1.5 rounded-full bg-primary opacity-100 transition-opacity"></span></a>
+                        </li>
+                        <li><a href="services.html"
+                                class="hover:text-primary transition-colors flex items-center gap-3 justify-end group"><span>خدماتنا</span>
+                                <span
+                                    class="w-1.5 h-1.5 rounded-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></span></a>
+                        </li>
+                        <li><a href="about.html"
+                                class="hover:text-primary transition-colors flex items-center gap-3 justify-end group"><span>من
+                                    نحن</span> <span
+                                    class="w-1.5 h-1.5 rounded-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></span></a>
+                        </li>
+                        <li><a href="contact.html"
+                                class="hover:text-primary transition-colors flex items-center gap-3 justify-end group"><span>اتصل
+                                    بنا</span> <span
+                                    class="w-1.5 h-1.5 rounded-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="space-y-8">
+                    <h5 class="text-primary font-black uppercase tracking-[0.3em] text-xs">Our Values</h5>
+                    <div class="space-y-6">
+                        <div class="text-right">
+                            <p class="text-white font-bold mb-1">الأصالة أولاً</p>
+                            <p class="text-white/30 text-sm">نبتكر هويتك الخاصة التي تترجم جوهر عملك.</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-white font-bold mb-1">نتائج قابلة للقياس</p>
+                            <p class="text-white/30 text-sm">نعتمد على البيانات لضمان نمو حقيقي ومستدام.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div
+            class="max-w-7xl mx-auto mt-24 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 text-right">
+            <p class="text-white/20 text-xs font-black uppercase tracking-[0.3em]">© 2024 OOTB Growth Systems. Crafted
+                for Excellence.</p>
+            <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                <p class="text-primary/40 text-xs font-black uppercase tracking-[0.2em]">Designed by OOTB Agency</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const portfolioSections = document.querySelectorAll('.portfolio-section');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Update active button classes
+                    filterBtns.forEach(b => {
+                        b.classList.remove('bg-primary', 'text-dark', 'shadow-lg', 'shadow-primary/20');
+                        b.classList.add('bg-white', 'text-dark/60');
+                    });
+                    btn.classList.remove('bg-white', 'text-dark/60');
+                    btn.classList.add('bg-primary', 'text-dark', 'shadow-lg', 'shadow-primary/20');
+
+                    // Filter sections
+                    const filter = btn.dataset.filter;
+                    portfolioSections.forEach(section => {
+                        if (filter === 'all' || section.dataset.category === filter) {
+                            section.style.display = '';
+                        } else {
+                            section.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const closeMenuBtn = document.getElementById('close-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuBtn && closeMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.remove('hidden');
+                    mobileMenu.classList.add('flex');
+                    document.body.style.overflow = 'hidden';
+                });
+
+                closeMenuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('flex');
+                    document.body.style.overflow = '';
+                });
+                
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenu.classList.remove('flex');
+                        document.body.style.overflow = '';
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

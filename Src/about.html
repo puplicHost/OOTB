@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e98024",
+                        "main": "#FFF4EA",
+                        "dark": "#353535",
+                    },
+                    fontFamily: {
+                        "display": ["Outfit", "IBM Plex Sans Arabic", "sans-serif"],
+                        "sans": ["IBM Plex Sans Arabic", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        ::selection {
+            background-color: #e98024;
+            color: #FFF4EA;
+        }
+
+        .glass {
+            background: rgba(255, 244, 234, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(233, 128, 36, 0.1);
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            50% {
+                transform: translate(-10px, -15px);
+            }
+
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+
+        .float-animation {
+            animation: float 5s ease-in-out infinite;
+        }
+    </style>
+</head>
+
+<body class="bg-main font-sans text-dark antialiased">
+    <!-- Navigation -->
+    <header class="fixed top-0 z-50 w-full glass">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+            <div class="flex items-center gap-4 group cursor-pointer">
+                <div
+                    class="flex items-center justify-center p-1 bg-primary/10 rounded-full group-hover:bg-primary/20 transition-all overflow-hidden w-16 h-16">
+                    <img src="../Logo/2.png" alt="OOTB Logo" class="h-full w-full object-contain drop-shadow-sm">
+                </div>
+                <div class="flex flex-col">
+                    <div class="font-display font-black text-2xl tracking-tight text-dark leading-none">OOTB</div>
+                    <div class="text-[10px] uppercase tracking-[0.3em] font-bold text-primary mt-1">Growth Systems</div>
+                </div>
+            </div>
+            <nav class="hidden lg:flex items-center gap-12">
+                <a class="text-sm font-bold text-dark/80 hover:text-primary transition-all relative group/link"
+                    href="../index.html">
+                    الرئيسية
+                    <span
+                        class="absolute -bottom-1 right-0 w-0 h-0.5 bg-primary transition-all group-hover/link:w-full"></span>
+                </a>
+
+                <a class="text-sm font-bold text-dark/80 hover:text-primary transition-all relative group/link"
+                    href="works.html">
+                    أعمالنا
+                    <span
+                        class="absolute -bottom-1 right-0 w-0 h-0.5 bg-primary transition-all group-hover/link:w-full"></span>
+                </a>
+                <a class="text-sm font-bold text-dark/80 hover:text-primary transition-all relative group/link"
+                    href="services.html">
+                    خدماتنا
+                    <span
+                        class="absolute -bottom-1 right-0 w-0 h-0.5 bg-primary transition-all group-hover/link:w-full"></span>
+                </a>
+                <a class="text-sm font-bold text-dark/80 hover:text-primary transition-all relative group/link"
+                    href="about.html">
+                    من نحن
+                    <span
+                        class="absolute -bottom-1 right-0 w-0 h-0.5 bg-primary transition-all group-hover/link:w-full"></span>
+                </a>
+                <a class="text-sm font-bold text-dark/80 hover:text-primary transition-all relative group/link"
+                    href="contact.html">
+                    اتصل بنا
+                    <span
+                        class="absolute -bottom-1 right-0 w-0 h-0.5 bg-primary transition-all group-hover/link:w-full"></span>
+                </a>
+            </nav>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden text-dark hover:text-primary transition-colors p-2 z-50">
+                    <span class="material-symbols-rounded text-3xl">menu</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed inset-0 z-40 bg-main/98 backdrop-blur-xl flex-col items-center justify-center gap-8 hidden lg:hidden">
+            <button id="close-menu-btn" class="absolute top-8 left-6 text-dark hover:text-primary transition-colors p-2 z-50">
+                <span class="material-symbols-rounded text-4xl">close</span>
+            </button>
+            <nav class="flex flex-col items-center gap-8 text-xl font-bold">
+                <a href="../index.html" class="text-dark hover:text-primary transition-all">الرئيسية</a>
+                <a href="works.html" class="text-dark hover:text-primary transition-all">أعمالنا</a>
+                <a href="services.html" class="text-dark hover:text-primary transition-all">خدماتنا</a>
+                <a href="about.html" class="text-dark hover:text-primary transition-all">من نحن</a>
+                <a href="contact.html" class="text-dark hover:text-primary transition-all">اتصل بنا</a>
+            </nav>
+        </div>
+
+    <main class="max-w-7xl mx-auto px-6 py-40">
+        <!-- About Section -->
+        <section class="mb-40">
+            <div class="flex flex-col lg:flex-row items-center gap-24">
+                <!-- Image Column -->
+                <div class="w-full lg:w-1/2 relative">
+                    <div class="absolute -top-10 -right-10 w-40 h-40 bg-primary/20 rounded-full blur-3xl"></div>
+                    <div class="relative z-10 aspect-[4/5] bg-dark rounded-[3rem] overflow-hidden group shadow-2xl">
+                        <img alt="OOTB Growth Systems - About Us"
+                            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100"
+                            src="../Logo/hero.jpeg" />
+                        <div
+                            class="absolute bottom-10 left-10 right-10 p-8 glass rounded-2xl border-white/20 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-dark font-black text-xl mb-1">OOTB</p>
+                            <p class="text-primary font-bold text-sm tracking-widest uppercase">Growth Systems</p>
+                        </div>
+                    </div>
+                    <!-- Stats Card -->
+                    <div
+                        class="absolute -bottom-8 -left-8 w-48 p-6 bg-primary rounded-3xl shadow-2xl shadow-primary/30 z-20 float-animation">
+                        <div class="text-main font-black text-4xl mb-1">100%</div>
+                        <div class="text-main/80 text-xs font-bold uppercase tracking-widest">Ownership <br>Of Results
+                        </div>
+                    </div>
+                </div>
+                <!-- Content Column -->
+                <div class="w-full lg:w-1/2">
+                    <div class="space-y-8">
+                        <div
+                            class="inline-flex items-center gap-3 px-4 py-2 bg-primary/5 border border-primary/20 rounded-full">
+                            <span class="flex h-2 w-2 rounded-full bg-primary"></span>
+                            <span class="text-[10px] font-black uppercase tracking-[0.2em] text-primary">Behind The
+                                Engine</span>
+                        </div>
+                        <h1 class="text-5xl md:text-6xl font-black text-dark leading-tight tracking-tight">
+                            هل شعرت يوماً أن علامتك التجارية مجرد صوت ضائع في <br /><span class="text-primary italic">ضجيج السوق؟</span>
+                        </h1>
+                        <div class="space-y-6 text-dark/70 text-lg leading-relaxed font-medium">
+                            <p>
+                                في OOTB، نؤمن أن الحلول تكمن في طريقة التفكير. نحن فريق إبداعي يرى في كل مشروع قصة فريدة تستحق أن تُروى بطريقة استثنائية، بعيداً عن الحلول التقليدية.
+                            </p>
+                            <div class="relative py-8 px-8 bg-white rounded-[2rem] border border-dark/5 shadow-2xl shadow-dark/[0.02]">
+                                <span class="material-symbols-rounded absolute -top-4 -right-4 text-primary bg-main p-4 rounded-full text-3xl shadow-xl">format_quote</span>
+                                <h3 class="text-xl font-black text-dark mb-4">لماذا يختارنا شركاؤنا؟</h3>
+                                <p class="text-dark/80 font-medium leading-relaxed mb-4">
+                                    لأننا لا نكتفي بالتنفيذ، بل نحلل ونفهم لبناء خطة محكمة بلمسة فنية.
+                                    لدينا طريقتنا الخاصة في العمل، تضمن تحويل المحتوى الخاص بك من مجرد منشورات إلى نظام نمو دائم وقابل للقياس.
+                                </p>
+                                <p class="text-dark/80 font-medium leading-relaxed mb-4">
+                                    فريقنا متكامل، من بناء الاستراتيجية إلى صناعة المحتوى، التصميم، إدارة الحسابات، والإعلانات الممولة، 
+                                    نحن نوفر عليك عناء التعامل مع عدة جهات. بصمتنا خاصة لا نتبع العشوائية، بل نتحرك وفق بوصلة استراتيجية: منهجية الـ 4D الخاصة بنا.
+                                </p>
+                                <p class="text-dark/80 font-medium leading-relaxed mb-4">
+                                    <strong class="text-primary">قيمنا هي محركنا،</strong> نعمل بتناغم وانسجام تحت مظلة: 
+                                    <br>الأمانة، الإتقان، الإلتزام بمبادئ الشريعة الإسلامية.
+                                </p>
+                                <p class="italic text-dark font-bold leading-relaxed text-center mt-6">
+                                    "رؤيتنا تحويل قصة علامتك التجارية إلى أثر لا يُنسى."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values Section -->
+        <section class="py-24 border-t border-dark/5">
+            <div class="flex flex-col md:flex-row items-end justify-between mb-24 gap-8 text-right">
+                <div class="space-y-4">
+                    <h2 class="text-5xl md:text-6xl font-black text-dark tracking-tight">القيم التي <span
+                            class="text-primary">تحركنا</span></h2>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Value 1 -->
+                <div
+                    class="group p-10 bg-white border border-dark/5 rounded-[2.5rem] hover:bg-dark transition-all duration-500 shadow-2xl shadow-dark/[0.02]">
+                    <div class="mb-10 text-primary font-black text-2xl group-hover:text-main">01</div>
+                    <span
+                        class="material-symbols-rounded text-primary text-5xl mb-8 block group-hover:scale-110 transition-transform">verified</span>
+                    <h3 class="text-2xl font-black mb-4 text-dark group-hover:text-main">الأصالة</h3>
+                    <p class="text-dark/50 group-hover:text-main/50 font-bold text-sm leading-relaxed">نبتكر هويتك
+                        الخاصة التي يتردد صداها مع جمهورك الحقيقي.</p>
+                </div>
+                <!-- Value 2 -->
+                <div
+                    class="group p-10 bg-white border border-dark/5 rounded-[2.5rem] hover:bg-dark transition-all duration-500 shadow-2xl shadow-dark/[0.02]">
+                    <div class="mb-10 text-primary font-black text-2xl group-hover:text-main">02</div>
+                    <span
+                        class="material-symbols-rounded text-primary text-5xl mb-8 block group-hover:scale-110 transition-transform">analytics</span>
+                    <h3 class="text-2xl font-black mb-4 text-dark group-hover:text-main">القياس</h3>
+                    <p class="text-dark/50 group-hover:text-main/50 font-bold text-sm leading-relaxed">نعتمد على
+                        البيانات والنتائج لضمان نمو حقيقي ومستدام.</p>
+                </div>
+                <!-- Value 3 -->
+                <div
+                    class="group p-10 bg-white border border-dark/5 rounded-[2.5rem] hover:bg-dark transition-all duration-500 shadow-2xl shadow-dark/[0.02]">
+                    <div class="mb-10 text-primary font-black text-2xl group-hover:text-main">03</div>
+                    <span
+                        class="material-symbols-rounded text-primary text-5xl mb-8 block group-hover:scale-110 transition-transform">lightbulb</span>
+                    <h3 class="text-2xl font-black mb-4 text-dark group-hover:text-main">الابتكار</h3>
+                    <p class="text-dark/50 group-hover:text-main/50 font-bold text-sm leading-relaxed">التحدي المستمر
+                        للوضع الراهن لتقديم حلول سابقة لعصرها.</p>
+                </div>
+                <!-- Value 4 -->
+                <div
+                    class="group p-10 bg-white border border-dark/5 rounded-[2.5rem] hover:bg-dark transition-all duration-500 shadow-2xl shadow-dark/[0.02]">
+                    <div class="mb-10 text-primary font-black text-2xl group-hover:text-main">04</div>
+                    <span
+                        class="material-symbols-rounded text-primary text-5xl mb-8 block group-hover:scale-110 transition-transform">handshake</span>
+                    <h3 class="text-2xl font-black mb-4 text-dark group-hover:text-main">الشراكة</h3>
+                    <p class="text-dark/50 group-hover:text-main/50 font-bold text-sm leading-relaxed">علاقتنا بعملائنا
+                        ليست مجرد عقود، بل هي شراكة نمو.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location Context -->
+        <section
+            class="mt-24 p-16 bg-primary text-main rounded-[3rem] flex flex-col md:flex-row items-center justify-between gap-12 relative overflow-hidden">
+            <div
+                class="absolute top-0 right-0 w-64 h-64 bg-main opacity-5 rounded-full -translate-y-1/2 translate-x-1/2">
+            </div>
+            <div class="flex-1 relative z-10">
+                <h3 class="text-4xl font-black mb-4">من قلب العاشر من رمضان</h3>
+                <p class="text-main/80 text-xl font-bold max-w-xl">
+                    نخدم الشركات في جميع أنحاء مصر والشرق الأوسط من مركزنا الصناعي والتقني المتميز. نؤمن بأن النجاح
+                    العالمي يبدأ من التميز المحلي.
+                </p>
+            </div>
+            <div
+                class="flex items-center gap-4 bg-main/10 p-6 rounded-3xl border border-main/20 backdrop-blur-xl relative z-10 group cursor-default">
+                <span class="material-symbols-rounded text-4xl animate-bounce">location_on</span>
+                <div>
+                    <span class="font-black uppercase tracking-widest block text-xs mb-1 opacity-60">Headquarters</span>
+                    <span class="font-black text-lg">مدينة العاشر من رمضان</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark border-t border-primary/10 py-24 px-6 md:px-20 text-right relative overflow-hidden">
+        <div
+            class="absolute top-0 right-0 w-96 h-96 bg-primary opacity-[0.02] rounded-full translate-x-1/2 -translate-y-1/2">
+        </div>
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-20 relative z-10">
+            <div class="space-y-8 max-w-sm">
+                <div class="flex items-center gap-4 group cursor-pointer">
+                    <div
+                        class="flex items-center justify-center p-1 bg-white/5 rounded-full group-hover:bg-primary transition-all overflow-hidden w-16 h-16">
+                        <img src="../Logo/2.png" alt="OOTB Logo" class="h-full w-full object-contain">
+                    </div>
+                    <div class="flex flex-col text-right">
+                        <div class="font-display font-black text-3xl text-white leading-none">OOTB</div>
+                        <div class="text-[10px] uppercase tracking-[0.3em] font-bold text-primary mt-1">Growth Systems
+                        </div>
+                    </div>
+                </div>
+                <p class="text-white/40 font-bold leading-relaxed text-lg">وكالة النمو الإبداعي الرائدة في مصر. نحن لا
+                    نصمم محتوى فقط، بل نبني أنظمة نمو قوية تتجاوز التوقعات وتضع علامتك التجارية في الصدارة.</p>
+                <div class="flex gap-4">
+                    <a href="https://wa.me/201000046434" target="_blank"
+                        class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center text-white/40 hover:bg-[#25D366] hover:text-white transition-all duration-300">
+                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                            <path d="M12.031 0C5.385 0 0 5.387 0 12.035c0 2.126.551 4.195 1.597 6.014L.015 24l6.096-1.598A11.966 11.966 0 0012.031 24c6.645 0 12.031-5.385 12.031-12.033C24.062 5.387 18.676 0 12.031 0zm7.119 17.202c-.302.85-1.503 1.636-2.074 1.701-.523.058-1.189.261-3.75-1.488-3.085-2.108-5.076-5.263-5.228-5.467-.151-.202-1.25-1.666-1.25-3.178 0-1.512.784-2.257 1.059-2.559.274-.302.597-.378.795-.378.199 0 .397.001.57.009.183.008.431-.073.673.51.248.598.847 2.062.923 2.214.075.151.124.327.024.529-.099.202-.151.328-.301.503-.151.176-.316.37-.453.511-.151.144-.312.302-.143.593.17.291.756 1.246 1.618 2.016 1.111.996 2.051 1.306 2.342 1.45.291.144.462.12.636-.076.175-.195.748-.871.947-1.171.199-.302.398-.252.664-.151.266.1.1685.794 1.833.869.149.076.252.128.288.203.036.075.036.435-.266 1.285L19.15 17.202z"/>
+                        </svg>
+                    </a>
+                    <a href="mailto:im.sara1990@gmail.com"
+                        class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center text-white/40 hover:bg-primary hover:text-white transition-all duration-300">
+                        <span class="material-symbols-rounded">mail</span>
+                    </a>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-20 flex-1">
+                <div class="space-y-8">
+                    <h5 class="text-primary font-black uppercase tracking-[0.3em] text-xs">Navigation</h5>
+                    <ul class="space-y-4 text-white/60 font-bold text-lg">
+                        <li><a href="../index.html"
+                                class="hover:text-primary transition-colors flex items-center gap-3 justify-end group"><span>الرئيسية</span>
+                                <span
+                                    class="w-1.5 h-1.5 rounded-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></span></a>
+                        </li>
+
+                        <li><a href="works.html"
+                                class="hover:text-primary transition-colors flex items-center gap-3 justify-end group"><span>أعمالنا</span>
+                                <span
+                                    class="w-1.5 h-1.5 rounded-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></span></a>
+                        </li>
+                        <li><a href="services.html"
+                                class="hover:text-primary transition-colors flex items-center gap-3 justify-end group"><span>خدماتنا</span>
+                                <span
+                                    class="w-1.5 h-1.5 rounded-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></span></a>
+                        </li>
+                        <li><a href="about.html"
+                                class="hover:text-primary transition-colors flex items-center gap-3 justify-end group"><span>من
+                                    نحن</span> <span
+                                    class="w-1.5 h-1.5 rounded-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></span></a>
+                        </li>
+                        <li><a href="contact.html"
+                                class="hover:text-primary transition-colors flex items-center gap-3 justify-end group"><span>اتصل
+                                    بنا</span> <span
+                                    class="w-1.5 h-1.5 rounded-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="space-y-8">
+                    <h5 class="text-primary font-black uppercase tracking-[0.3em] text-xs">Our Values</h5>
+                    <div class="space-y-6">
+                        <div class="text-right">
+                            <p class="text-white font-bold mb-1">الأصالة أولاً</p>
+                            <p class="text-white/30 text-sm">نبتكر هويتك الخاصة التي تترجم جوهر عملك.</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-white font-bold mb-1">نتائج قابلة للقياس</p>
+                            <p class="text-white/30 text-sm">نعتمد على البيانات لضمان نمو حقيقي ومستدام.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div
+            class="max-w-7xl mx-auto mt-24 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 text-right">
+            <p class="text-white/20 text-xs font-black uppercase tracking-[0.3em]">© 2024 OOTB Growth Systems. Crafted
+                for Excellence.</p>
+            <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                <p class="text-primary/40 text-xs font-black uppercase tracking-[0.2em]">Designed by OOTB Agency</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const closeMenuBtn = document.getElementById('close-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuBtn && closeMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.remove('hidden');
+                    mobileMenu.classList.add('flex');
+                    document.body.style.overflow = 'hidden';
+                });
+
+                closeMenuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('flex');
+                    document.body.style.overflow = '';
+                });
+                
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenu.classList.remove('flex');
+                        document.body.style.overflow = '';
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
