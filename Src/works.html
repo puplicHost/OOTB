@@ -67,7 +67,7 @@
             <div class="flex items-center gap-4 group cursor-pointer">
                 <div
                     class="flex items-center justify-center p-1 bg-primary/10 rounded-full group-hover:bg-primary/20 transition-all overflow-hidden w-16 h-16">
-                    <img src="../Logo/2.png" alt="OOTB Logo" class="h-full w-full object-contain drop-shadow-sm">
+                    <img src="../Logo/1.png" alt="OOTB Logo" class="h-full w-full object-contain drop-shadow-sm">
                 </div>
                 <div class="flex flex-col text-right">
                     <div class="font-display font-black text-2xl tracking-tight text-dark leading-none">OOTB</div>
@@ -123,7 +123,7 @@
             <h1 class="text-6xl md:text-9xl font-black text-dark tracking-tight leading-tight">معرض <br><span
                     class="text-primary italic">الإبداع والنتائج</span></h1>
             <p class="text-dark/60 text-2xl font-bold max-w-2xl leading-relaxed">
-                هنا حيث تتحول الرؤى إلى واقع ملموس. استعرض رحلات النجاح التي خضناها مع شركائنا.
+                هنا حيث تتحول الرؤى إلى واقع ملموس.<br>استعرض رحلات النجاح التي خضناها مع شركائنا.
             </p>
         </section>
 
@@ -134,8 +134,10 @@
                 class="filter-btn px-8 py-3 bg-white border border-dark/5 text-dark/60 rounded-full font-black text-sm hover:border-primary/40 hover:text-dark transition-all">التصميم</button>
             <button data-filter="content"
                 class="filter-btn px-8 py-3 bg-white border border-dark/5 text-dark/60 rounded-full font-black text-sm hover:border-primary/40 hover:text-dark transition-all">صناعة محتوى</button>
-            <button data-filter="video"
-                class="filter-btn px-8 py-3 bg-white border border-dark/5 text-dark/60 rounded-full font-black text-sm hover:border-primary/40 hover:text-dark transition-all">صناعة فيديو</button>
+            <button data-filter="video-ai"
+                class="filter-btn px-8 py-3 bg-white border border-dark/5 text-dark/60 rounded-full font-black text-sm hover:border-primary/40 hover:text-dark transition-all">صناعة فيديو AI</button>
+            <button data-filter="video-edit"
+                class="filter-btn px-8 py-3 bg-white border border-dark/5 text-dark/60 rounded-full font-black text-sm hover:border-primary/40 hover:text-dark transition-all">صناعة فيديو مونتاج</button>
         </div>
 
         <!-- Design Section Title -->
@@ -495,15 +497,15 @@
         </div>
 
         <!-- Video Editing Section Title -->
-        <div class="mb-16 text-right portfolio-section" data-category="video">
+        <div class="mb-16 text-right portfolio-section" data-category="video-edit">
             <h2 class="text-4xl font-black text-dark flex items-center gap-4 justify-end">
                 <span class="w-12 h-1 bg-primary rounded-full"></span>
                 صناعة ومونتاج الفيديو
             </h2>
         </div>
 
-        <!-- Portfolio Grid - Video Works -->
-        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-40 portfolio-section" data-category="video">
+        <!-- Portfolio Grid - Video Editing Works -->
+        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-40 portfolio-section" data-category="video-edit">
             <!-- Project 1: Restaurant -->
             <div
                 class="work-card group relative overflow-hidden rounded-[3.5rem] bg-dark border border-white/5 shadow-2xl">
@@ -567,8 +569,19 @@
                     <h3 class="text-2xl font-black text-main">مونتاج أعمال الديكور</h3>
                 </div>
             </div>
+        </section>
 
-            <!-- Project 5: AI Integration -->
+        <!-- AI Video Section Title -->
+        <div class="mb-16 text-right portfolio-section" data-category="video-ai">
+            <h2 class="text-4xl font-black text-dark flex items-center gap-4 justify-end">
+                <span class="w-12 h-1 bg-primary rounded-full"></span>
+                إبداع الفيديو بالذكاء الاصطناعي (AI)
+            </h2>
+        </div>
+
+        <!-- Portfolio Grid - AI Video Works -->
+        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-40 portfolio-section" data-category="video-ai">
+            <!-- Project: AI Integration -->
             <div
                 class="work-card group relative overflow-hidden rounded-[3.5rem] bg-dark border border-white/5 shadow-2xl">
                 <div class="aspect-[9/16] relative overflow-hidden bg-black">
@@ -580,13 +593,13 @@
                     class="p-8 text-right bg-dark/50 backdrop-blur-md absolute bottom-0 inset-x-0 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
                     <span class="text-primary font-black uppercase tracking-widest text-[10px] mb-2 block">AI
                         Innovation</span>
-                    <h3 class="text-2xl font-black text-main">دمج الذكاء الاصطناعي في المونتاج</h3>
+                    <h3 class="text-2xl font-black text-main">إبداع الفيديو بالذكاء الاصطناعي</h3>
                 </div>
             </div>
         </section>
 
         <!-- Video Works Button -->
-        <div class="flex justify-center mb-40 portfolio-section" data-category="video">
+        <div class="flex justify-center mb-40 portfolio-section" data-category="video-edit">
             <a href="#" 
                 class="group relative px-12 py-6 bg-primary text-dark rounded-[2rem] font-black text-2xl transition-all hover:scale-105 shadow-2xl shadow-primary/20 flex items-center gap-4">
                 <span>مشاهدة جميع الأعمال</span>
@@ -630,8 +643,7 @@
                         </div>
                     </div>
                 </div>
-                <p class="text-white/40 font-bold leading-relaxed text-lg">وكالة النمو الإبداعي الرائدة في مصر. نحن لا
-                    نصمم محتوى فقط، بل نبني أنظمة نمو قوية تتجاوز التوقعات وتضع علامتك التجارية في الصدارة.</p>
+                <p class="text-white/40 font-bold leading-relaxed text-lg">نحوّل القصص إلى أثر لا يُنسى.</p>
                 <div class="flex gap-4">
                     <a href="https://wa.me/201000046434" target="_blank"
                         class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center text-white/40 hover:bg-[#25D366] hover:text-white transition-all duration-300">
@@ -639,7 +651,7 @@
                             <path d="M12.031 0C5.385 0 0 5.387 0 12.035c0 2.126.551 4.195 1.597 6.014L.015 24l6.096-1.598A11.966 11.966 0 0012.031 24c6.645 0 12.031-5.385 12.031-12.033C24.062 5.387 18.676 0 12.031 0zm7.119 17.202c-.302.85-1.503 1.636-2.074 1.701-.523.058-1.189.261-3.75-1.488-3.085-2.108-5.076-5.263-5.228-5.467-.151-.202-1.25-1.666-1.25-3.178 0-1.512.784-2.257 1.059-2.559.274-.302.597-.378.795-.378.199 0 .397.001.57.009.183.008.431-.073.673.51.248.598.847 2.062.923 2.214.075.151.124.327.024.529-.099.202-.151.328-.301.503-.151.176-.316.37-.453.511-.151.144-.312.302-.143.593.17.291.756 1.246 1.618 2.016 1.111.996 2.051 1.306 2.342 1.45.291.144.462.12.636-.076.175-.195.748-.871.947-1.171.199-.302.398-.252.664-.151.266.1.1685.794 1.833.869.149.076.252.128.288.203.036.075.036.435-.266 1.285L19.15 17.202z"/>
                         </svg>
                     </a>
-                    <a href="mailto:im.sara1990@gmail.com"
+                    <a href="mailto:ootb.egyy@gmail.com"
                         class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center text-white/40 hover:bg-primary hover:text-white transition-all duration-300">
                         <span class="material-symbols-rounded">mail</span>
                     </a>
